@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>cbp</title>
+    <meta charset="utf-8">
+    <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />   
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
+</head>
+<body>
+<div>
+    <p>Name:&nbsp &nbsp &nbsp<input type="text" id="name" maxlength="15"></p>
+	</div>
+		
+	
+    <div class="demo">
+        <p>Birthday: <input type="text" id="datepicker"></p>
+    </div>
+	
+	<div>
+	<p>Color:&nbsp &nbsp &nbsp <input id="c" class="jscolor" value="ab2567"></p>
+	</div>
+	
+	<button>draw</button>
+	
+	<div>
+	<p id="textline"></p>
+	</div>
+	
+	<script src="jscolor.js">
+	</script>
+
+
+<script>
+//var x;
+$(function() {
+    $("#datepicker").datepicker({maxDate: '+0d'});
+});
+
+
+
+
+$(document).ready(function(){
+    $("button").click(function(){
+        var text=document.getElementById("name").value;
+		var text2=document.getElementById("datepicker").value;
+		var t=document.getElementById("c").value;
+		var txt="Hi "+ text + ", your birthday is "+ text2;
+		$("#textline").css("color", "#"+t);
+        document.getElementById("textline").innerHTML = txt;
+    });
+});
+</script>
+
+
+
+</body>
+</html>
